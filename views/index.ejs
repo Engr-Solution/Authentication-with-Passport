@@ -1,0 +1,11 @@
+<%- include('_header') %>
+
+<div class="container d-flex justify-content-center align-items-center"> 
+    <h1 class="text-light">Welcome <%= user.username %> </h1>
+
+    <form action="/logout?_method=DELETE" >
+        <button type="submit" class="btn btn-primary mx-3">Logout</button>
+    </form>
+</div>
+
+<%- include('_footer') %>

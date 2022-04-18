@@ -1,0 +1,75 @@
+<%- include('_header') %>
+
+<div class="container bordered row p-5 mx-5">
+  <% if(messages) {%>
+  <p><%= messages.error %></p>
+  <%} %>
+  <div
+    class="g-3 col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center"
+  >
+    <div onclick="location.href = '/auth/google'" class="auth w-75 border p-2 m-3 text-center fs-3 fw-bold google">
+      <img
+        src="img/google-removebg-preview.png"
+        class="me-3"
+        alt="google logo"
+      />
+      Google
+    </div>
+    <div onclick="location.href = '/auth/facebook'" class="auth w-75 border p-2 m-3 text-center fs-3 fw-bold facebook">
+      <img
+        src="img/facebook-removebg-preview.png"
+        class="me-3"
+        alt="facebook logo"
+      />
+      Facebook
+    </div>
+    <div onclick="location.href = '/auth/github'" class="auth w-75 border p-2 m-3 text-center fs-3 fw-bold github">
+      <img
+        src="img/github-removebg-preview.png"
+        class="me-3"
+        alt="github logo"
+      />
+      Github
+    </div>
+  </div>
+  <form
+    action="/auth/login"
+    method="POST"
+    class="g-3 needs-validation col-sm-12 col-md-6"
+    novalidate
+  >
+    <div class="col-sm-12">
+      <label for="email" class="form-label">Email</label>
+      <div class="input-group has-validation">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid Email</div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <label for="password" class="form-label">Password</label>
+      <div class="input-group has-validation">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        />
+        <div class="invalid-feedback">Please enter your password.</div>
+      </div>
+    </div>
+    <div class="col-12 my-3">
+      <button class="btn btn-primary" type="submit">Login</button>
+      <p class="link mt-2">
+        Dont have an account? <a href="/register">Register</a>
+      </p>
+    </div>
+  </form>
+</div>
+<%- include('_footer') %>
